@@ -1,0 +1,7 @@
+#!/bin/bash -e
+
+echo "Removing bash history"
+
+unset HISTFILE
+rm -f /root/.bash_history
+rm -f /home/vagrant/.bash_history

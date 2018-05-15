@@ -1,0 +1,71 @@
+#!/bin/bash -e
+
+echo "Purge apt packages installed to build virtualbox tools..."
+
+apt purge -y \
+  binutils \
+  cpp \
+  cpp-6 \
+  dkms \
+  fakeroot \
+  gcc \
+  gcc-6 \
+  libasan3 \
+  libatomic1 \
+  libc-dev-bin \
+  libc6-dev \
+  libcc1-0 \
+  libcilkrts5 \
+  libfakeroot \
+  libgcc-6-dev \
+  libgomp1 \
+  libisl15 \
+  libitm1 \
+  liblsan0 \
+  libmpc3 \
+  libmpfr4 \
+  libmpx2 \
+  libquadmath0 \
+  libtsan0 \
+  libubsan0 \
+  linux-compiler-gcc-6-x86 \
+  linux-headers-4.9.0-6-amd64 \
+  linux-headers-4.9.0-6-common \
+  linux-headers-amd64 linux-kbuild-4.9 \
+  linux-libc-dev \
+  make \
+  manpages-dev \
+  patch
+
+echo "Purge extra apt packages..." 
+apt purge -y \
+  installation-report \
+  python3-pycurl \
+  libffi6 \
+  ca-certificates \
+  libnghttp2-14 \
+  libssh2-1 \
+  openssl \
+  python3-chardet \
+  python3-debian \
+  python3-httplib2 \
+  python3-pkg-resources \
+  python3-requests \
+  python3-six \
+  python-urllib3 \
+  bind9-host \
+  console-common \
+  eject \
+  file \
+  manpages \
+  nano \
+  netcat \
+  ncurses-term \
+  tasksel \
+  wamerican
+
+echo "Running apt autoremove..."
+sudo apt -y autoremove
+
+echo "Running apt-get clean..."
+apt-get clean
